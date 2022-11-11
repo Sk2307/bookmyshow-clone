@@ -2,7 +2,6 @@ package com.example.bookyourshow.models;
 
 import com.example.bookyourshow.enums.Language;
 import com.example.bookyourshow.enums.MovieFeature;
-import lombok.Builder;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,10 +18,8 @@ public class Show extends BaseModel{
 
     private Hall hall;
 
-    @Builder.Default
     private List<MovieFeature> movieFeatures = new ArrayList<>();
 
-    @Builder.Default
     private List<ShowSeat> showSeats = new ArrayList<>();
 
     public Show(Long id, Date createdAt, Date updatedAt, Movie movie, Language language, Date startTime, Date endTime, Hall hall, List<MovieFeature> movieFeatures, List<ShowSeat> showSeats) {

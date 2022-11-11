@@ -5,14 +5,17 @@ import com.example.bookyourshow.enums.SeatType;
 import java.util.Date;
 
 public class Seat extends BaseModel{
-    private final Integer row;
-    private final Integer column;
 
-    private final SeatType type;
-    public Seat(Long id, Date createdAt, Date updatedAt, Integer row, Integer column, SeatType type) {
+    private Integer rowNumber;
+
+    private Integer columnNumber;
+
+    private SeatType type;
+
+    public Seat(Long id, Date createdAt, Date updatedAt, Integer rowNumber, Integer columnNumber, SeatType type) {
         super(id, createdAt, updatedAt);
-        this.row = row;
-        this.column = column;
+        this.rowNumber = rowNumber;
+        this.columnNumber = columnNumber;
         this.type = type;
     }
 }

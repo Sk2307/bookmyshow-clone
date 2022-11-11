@@ -2,5 +2,8 @@ package com.example.bookyourshow.enums;
 
 public enum Language {
     HINDI,
-    ENGLISH
+    ENGLISH,
+    KANNADA,
+    TAMIL,
+    PUNJABI
 }

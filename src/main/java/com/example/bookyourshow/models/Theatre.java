@@ -1,6 +1,5 @@
 package com.example.bookyourshow.models;
 
-import lombok.Builder;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -12,11 +11,10 @@ public class Theatre extends BaseModel{
     private String name;
     private String address;
 
-    @Builder.Default
     private List<Hall> halls = new ArrayList<>();
 
-    @Builder.Default
     private List<Show> shows = new ArrayList<>();
+
     public Theatre(Long id, Date createdAt, Date updatedAt) {
         super(id, createdAt, updatedAt);
         this.name = name;
