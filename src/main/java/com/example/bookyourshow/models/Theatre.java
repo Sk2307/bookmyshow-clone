@@ -2,24 +2,21 @@ package com.example.bookyourshow.models;
 
 import lombok.Getter;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Getter
+@Entity
 public class Theatre extends BaseModel{
     private String name;
     private String address;
 
+    @OneToMany
     private List<Hall> halls = new ArrayList<>();
 
+    @OneToMany
     private List<Show> shows = new ArrayList<>();
 
-    public Theatre(Long id, Date createdAt, Date updatedAt) {
-        super(id, createdAt, updatedAt);
-        this.name = name;
-        this.address = address;
-        this.halls = halls;
-        this.shows = shows;
-    }
 }

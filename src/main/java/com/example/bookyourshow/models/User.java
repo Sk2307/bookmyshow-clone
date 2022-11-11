@@ -2,14 +2,14 @@ package com.example.bookyourshow.models;
 
 import lombok.Getter;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 @Getter
+@Entity
+@Table(name = "USERS")
 public class User extends BaseModel{
     private String email;
 
-    public User(Long id, Date createdAt, Date updatedAt, String email) {
-        super(id, createdAt, updatedAt);
-        this.email = email;
-    }
 }

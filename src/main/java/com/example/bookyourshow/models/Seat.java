@@ -1,21 +1,19 @@
 package com.example.bookyourshow.models;
 
 import com.example.bookyourshow.enums.SeatType;
+import lombok.Getter;
 
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 
+@Getter
+@Entity
 public class Seat extends BaseModel{
 
     private Integer rowNumber;
 
     private Integer columnNumber;
 
+    @Enumerated
     private SeatType type;
-
-    public Seat(Long id, Date createdAt, Date updatedAt, Integer rowNumber, Integer columnNumber, SeatType type) {
-        super(id, createdAt, updatedAt);
-        this.rowNumber = rowNumber;
-        this.columnNumber = columnNumber;
-        this.type = type;
-    }
 }

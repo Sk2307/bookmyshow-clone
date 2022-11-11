@@ -3,31 +3,29 @@ package com.example.bookyourshow.models;
 import com.example.bookyourshow.enums.TicketStatus;
 import lombok.Getter;
 
+import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Getter
+@Entity
 public class Ticket extends BaseModel{
+
+    @ManyToOne
     private Show show;
 
+    @ManyToOne
     private User user;
 
+    @ManyToMany
     private List<ShowSeat> seats = new ArrayList<>();
 
     private Double amount;
 
+    @Enumerated
     private TicketStatus status;
 
+    @OneToOne
     private Payment payment;
 
-    public Ticket(Long id, Date createdAt, Date updatedAt, Show show, User user, List<ShowSeat> seats, Double amount, TicketStatus status, Payment payment) {
-        super(id, createdAt, updatedAt);
-        this.show = show;
-        this.user = user;
-        this.seats = seats;
-        this.amount = amount;
-        this.status = status;
-        this.payment = payment;
-    }
 }
